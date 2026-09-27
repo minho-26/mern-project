@@ -40,6 +40,9 @@ jobs:
       - name: check Admin syntax
         working-directory: admin
         run: npm run build
+      - name: Lint Admin Code
+        working-directory: admin
+        run: npm run lint
         
     
 
