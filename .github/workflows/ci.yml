@@ -1,0 +1,46 @@
+name: CI
+on:
+  push:
+  pull_request:
+
+
+jobs:
+  build_and_test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Install dependencies
+        working-directory: backend
+        run: npm ci
+      - name: check backend syntax
+        working-directory: backend
+        run: node --check index.js
+
+      - name: Install frontend dependencies
+        working-directory: frontend
+        run: npm ci
+      - name: check frontend syntax
+        working-directory: frontend
+        run: npm run build
+      
+      - name: Install Admin dependencies
+        working-directory: admin
+        run: npm ci
+      - name: check Admin syntax
+        working-directory: admin
+        run: npm run build
+        
+          
+      
+
+
+
+
