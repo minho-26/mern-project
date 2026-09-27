@@ -1,6 +1,5 @@
 const port = 4000;
-const express = require("express");
-const app = express();
+const app = require("./app");
 const mongoose = require("mongoose");
 const jwt = require("jsonwebtoken");
 const multer = require("multer");
@@ -8,11 +7,9 @@ const path = require("path");
 const cors = require("cors");
 const { type } = require("os");
 
-app.use(express.json());
-app.use(cors());
 
 // Database Connection With MongoDB
-mongoose.connect("mongodb+srv://imaaz888:inspectormills@cybertech.6gzcwrf.mongodb.net/e-commerce");
+mongoose.connect("process.env.MONGODB_URI",);
 
 // API Creation
 

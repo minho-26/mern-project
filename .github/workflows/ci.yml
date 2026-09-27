@@ -23,6 +23,9 @@ jobs:
       - name: check backend syntax
         working-directory: backend
         run: node --check index.js
+      - name: Run backend tests
+        working-directory: backend
+        run: npm test
 
       - name: Install frontend dependencies
         working-directory: frontend
@@ -38,7 +41,8 @@ jobs:
         working-directory: admin
         run: npm run build
         
-          
+    
+
       
 
 
