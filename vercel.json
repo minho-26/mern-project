@@ -5,8 +5,11 @@
             "framework": "create-react-app"
         },
         "backend": {
-            "root": "backend"
+             "root": "backend",
+                "framework": "express",
+                    "entrypoint": "app.js"
         }
+
     },
     "rewrites": [
         {
