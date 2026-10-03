@@ -41,6 +41,8 @@ app.post("/upload", upload.single('product'), (req,res) => {
     })
 })
 console.log("Task A");
+console.log("Task B");
+
 
 // Schemas 
 const Product = mongoose.model("Product",{
